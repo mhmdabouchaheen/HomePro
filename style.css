@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
+  background: #ffffff;
 }
 
 .hero {
@@ -57,7 +57,6 @@ body {
 .service-time {
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 .service-time span {
@@ -69,13 +68,18 @@ body {
   margin-right: 8px;
 }
 
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 18px;
+}
+
 .hero-content {
   width: 100%;
   height: 440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 .image-box {
@@ -263,6 +267,7 @@ body {
 
 .professional-text {
   width: 40%;
+  order: 1;
 }
 
 .professional-text h2 {
@@ -325,6 +330,7 @@ body {
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  order: 2;
   clip-path: polygon(
     50% 0%,
     100% 24%,
@@ -415,45 +421,211 @@ body {
 }
 
 @media (max-width: 600px) {
-  .center-content h1 {
-    font-size: 30px;
+  body {
+    background: #f3f3f3;
   }
 
-  .checks {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .image-box {
+  .hero {
     width: 90%;
-    height: 360px;
+    min-height: auto;
+    margin: 0 auto;
+    padding-bottom: 25px;
   }
 
   .navbar {
-    width: 92%;
+    width: 88%;
+    height: 45px;
   }
 
+  .logo {
+    font-size: 13px;
+  }
+
+  .logo i {
+    font-size: 12px;
+  }
+
+  .nav-links,
   .service-time {
-    font-size: 11px;
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .hero-content {
+    height: auto;
+    display: block;
+    padding: 10px 18px 0;
+  }
+
+  .left-image,
+  .right-image {
+    display: none;
+  }
+
+  .center-content {
+    max-width: 100%;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .small-links {
+    font-size: 8px;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .center-content h1 {
+    font-size: 23px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .checks {
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .checks p {
+    font-size: 8px;
+  }
+
+  .checks i {
+    margin-right: 4px;
+  }
+
+  .call-btn {
+    padding: 8px 11px 8px 14px;
+    font-size: 10px;
+  }
+
+  .call-btn span {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+  }
+
+  .features {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 15px;
+    margin: 35px auto 10px;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+    gap: 7px;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .icon i {
+    font-size: 10px;
+  }
+
+  .feature p {
+    font-size: 9px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .hero::after {
+    height: 28px;
+    clip-path: polygon(
+      0 100%,
+      0 45%,
+      20% 45%,
+      28% 100%,
+      72% 100%,
+      80% 45%,
+      100% 45%,
+      100% 100%
+    );
   }
 
   .professional-section {
-    padding: 60px 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0 22px;
+    background: white;
   }
 
-  .professional-text h2 {
-    font-size: 32px;
-  }
-
-  .service-list {
-    grid-template-columns: 1fr;
-  }
-
-  .service-item {
-    justify-content: center;
+  .professional-container {
+    width: 86%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
   }
 
   .professional-image {
-    height: 260px;
+    order: 1;
+    width: 100%;
+    height: 170px;
+    max-width: none;
+    flex-shrink: 0;
+  }
+
+  .professional-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .professional-text {
+    order: 2;
+    width: 100%;
+    text-align: left;
+  }
+
+  .professional-text h2 {
+    font-size: 18px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .professional-description {
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .service-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .service-item {
+    justify-content: flex-start;
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .service-item i {
+    font-size: 8px;
+  }
+
+  .contact-box {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+  }
+
+  .contact-box p {
+    font-size: 10px;
+    line-height: 1.5;
   }
 }
